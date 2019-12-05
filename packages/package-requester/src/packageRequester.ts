@@ -119,7 +119,7 @@ async function resolveAndFetch (
     let normalizedPref: string | undefined
     let resolution = options.currentResolution as Resolution
     let pkgId = options.currentPackageId
-    const skipResolution = resolution && !options.update
+    const skipResolution = false;//resolution && !options.update
     let forceFetch = false
     let updated = false
     let resolvedVia: string | undefined
@@ -129,6 +129,7 @@ async function resolveAndFetch (
     // When we don't fetch, the only way to get the package's manifest is via resolving it.
     //
     // The resolution step is never skipped for local dependencies.
+  try {
     if (!skipResolution || options.skipFetch || pkgId?.startsWith('file:')) {
       const resolveResult = await ctx.requestsQueue.add<ResolveResult>(() => ctx.resolve(wantedDependency, {
         defaultTag: options.defaultTag,
@@ -162,6 +163,9 @@ async function resolveAndFetch (
         normalizedPref = resolveResult.normalizedPref
       }
     }
+  } catch (e) {
+    console.error("Resolve error: ", e)
+  }
 
     const id = pkgId as string
 
