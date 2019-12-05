@@ -1,0 +1,54 @@
+{
+  "name": "deep-require-from",
+  "version": "1.0.0",
+  "description": "Require a module like `require()` but via a sequence of nested packages",
+  "main": "index.js",
+  "typings": "index.d.ts",
+  "files": [
+    "index.js",
+    "index.d.ts"
+  ],
+  "scripts": {
+    "test": "tape test.js && mos t && standard",
+    "md": "mos"
+  },
+  "mos": {
+    "plugins": [
+      "readme"
+    ],
+    "installation": {
+      "useShortAlias": true
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zkochan/deep-require-from.git"
+  },
+  "keywords": [
+    "require",
+    "resolve",
+    "path",
+    "module",
+    "from",
+    "like",
+    "import"
+  ],
+  "author": {
+    "name": "Zoltan Kochan",
+    "url": "https://www.kochan.io"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zkochan/deep-require-from/issues"
+  },
+  "homepage": "https://github.com/zkochan/deep-require-from#readme",
+  "devDependencies": {
+    "mos": "^2.0.0-alpha.3",
+    "mos-plugin-readme": "^1.0.4",
+    "standard": "^10.0.2",
+    "tape": "^4.6.3"
+  },
+  "dependencies": {
+    "deep-resolve-from": "^1.1.0"
+  }
+}

@@ -4,7 +4,7 @@ logs
 npm-debug.log*
 
 # Dependency directory
-node_modules
+# node_modules
 _node_modules
 
 # Coverage directory used by tools like istanbul
@@ -13,7 +13,7 @@ coverage
 .tmp
 _docpress
 
-lib
+# lib
 
 # Visual Studio Code configs
 .vscode/
